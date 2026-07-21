@@ -472,7 +472,7 @@ function App() {
         <div className="section-head">
           <div>
             <span className="section-no">01</span>
-            <p className="eyebrow">THE LONG WAY HERE</p>
+            <p className="eyebrow">THE LONG WAY HOME</p>
             <h2>Follow the journey</h2>
           </div>
           <div className="journey-controls">
