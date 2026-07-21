@@ -1,6 +1,6 @@
 # My Journey - An Interactive Life
 
-A mobile-first interactive map tracing a 19-stop personal journey from San Francisco to Milan. Repeated cities are collected in a separate places-of-return section.
+A mobile-first interactive map tracing a 17-stop personal journey from San Francisco to Milan. Repeated cities are collected in a separate places-of-return section.
 
 ## Local development
 

@@ -248,14 +248,20 @@ function Map({ active, setActive }) {
     const map = L.map(elementRef.current, {
       zoomControl: true,
       scrollWheelZoom: false,
-      minZoom: 3,
+      minZoom: 1,
       maxZoom: 13,
     });
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
+      noWrap: true,
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
+    map.on("zoomend", () => {
+      if (map.getZoom() === map.getMinZoom()) {
+        map.panTo([20, -5], { animate: false });
+      }
+    });
     if (window.matchMedia("(max-width: 900px)").matches) {
       map.setView(coordinates["san-francisco-1"], 5);
     } else {
@@ -343,7 +349,7 @@ function Map({ active, setActive }) {
   return (
     <div className="map-shell">
       <div className="map-toolbar">
-        <span>A LIFE ACROSS THE WORLD · 19 STOPS</span>
+        <span>A LIFE ACROSS THE WORLD · {stops.length} STOPS</span>
         <span className="map-hint">DRAG TO EXPLORE · +/− TO ZOOM</span>
       </div>
       <div className="map-viewport">
@@ -359,7 +365,7 @@ function Map({ active, setActive }) {
             The route
           </span>
           <span>
-            <b>19</b> stops
+            <b>{stops.length}</b> stops
           </span>
         </div>
       </div>
