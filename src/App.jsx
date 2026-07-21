@@ -526,7 +526,7 @@ function App() {
           <div>
             <span className="section-no">02</span>
             <p className="eyebrow">PLACES OF RETURN</p>
-            <h2>The cities that recur</h2>
+            <h2>The repeat places</h2>
           </div>
         </div>
         <div className="appendix-grid">
